@@ -1,0 +1,56 @@
+/* styles.css (ou seu arquivo de estilos) */
+.header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.top-page-label {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.top-page-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+}
+
+.top-page-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.top-page-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
