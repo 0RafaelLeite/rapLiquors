@@ -1,7 +1,6 @@
 /* styles.css (ou seu arquivo de estilos) */
 .header {
-    background-color: #333;
-    color: #fff;
+    background-color: #73031D;
     display: flex;
     align-items: center;
     padding: 20px;
@@ -9,6 +8,12 @@
 
 .logo img {
     max-width: 100%;
+    width: 136px;
+    height: 124px;
+    top: 24px;
+    left: 36px;
+    gap: 0px;
+    opacity: 100px;
 }
 
 .top-page-label {
@@ -23,16 +28,17 @@
     margin-left: auto;
 }
 
-.top-page-links li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.top-page-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
+.icon-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .divider {
+    width: 1px;
+    height: 50px;
+    background-color: #ccc;
+    margin: 0 20px;
+  }
 
 .search-box {
     display: flex;
@@ -40,17 +46,26 @@
 }
 
 #search-input {
-    width: 200px;
-    padding: 5px;
-    border: 1px solid #ccc;
+    width: 860px;
+    height: 55px;
+    top: 43px;
+    left: 185px;
+    gap: 0px;
     border-radius: 5px;
+    opacity: 0px;
+    flex: 1;
+    margin-right: 10px;
 }
 
 #search-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #B8B8B8;
+    width: 25px;
+    height: 27px;
+    top: 59px;
+    left: 991px;
+    gap: 0px;
+    opacity: 0px;
+
 }

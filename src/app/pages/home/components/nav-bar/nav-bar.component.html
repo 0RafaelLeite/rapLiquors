@@ -1,1 +1,38 @@
-<p>nav-bar works!</p>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <select class="navbar-brand" id="categoria-select">
+            <option value="" selected disabled>Categorias</option>
+            <span class="navbar-toggler-icon"></span>
+          </select>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Promoções</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">whiskeys</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Cervejas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Rum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Vinhos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Gin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Marcas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <app-populares></app-populares>
+  <app-lower-page></app-lower-page>
+  
+  

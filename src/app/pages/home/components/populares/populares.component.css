@@ -1,0 +1,30 @@
+  .populares-container {
+    text-align: center;
+  }
+  
+  .populares-title {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  .carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .item {
+    margin: 10px;
+    text-align: center;
+  }
+
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-controls button {
+    font-size: 16px;
+    margin: 0 5px;
+  }
+  

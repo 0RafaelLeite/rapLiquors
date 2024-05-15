@@ -11,8 +11,8 @@ import { PedidosComponent } from './pages/home/components/pedidos/pedidos.compon
 import { ContaComponent } from './pages/home/components/conta/conta.component';
 import { TopPageComponent } from './pages/home/components/top-page/top-page.component';
 import { NavBarComponent } from './pages/home/components/nav-bar/nav-bar.component';
-
-
+import { PopularesComponent } from './pages/home/components/populares/populares.component';
+import { LowerPageComponent } from './pages/home/components/lower-page/lower-page.component';
 @NgModule({
     declarations: [
       AppComponent,
@@ -23,6 +23,9 @@ import { NavBarComponent } from './pages/home/components/nav-bar/nav-bar.compone
       ContaComponent,
       TopPageComponent,
       NavBarComponent,
+      PopularesComponent,
+      LowerPageComponent,
+      
     ],
     imports: [
       BrowserModule,

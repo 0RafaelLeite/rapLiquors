@@ -7,6 +7,9 @@ import { PedidosComponent } from './pages/home/components/pedidos/pedidos.compon
 import { ContaComponent } from './pages/home/components/conta/conta.component';
 import { TopPageComponent } from './pages/home/components/top-page/top-page.component';
 import { NavBarComponent } from './pages/home/components/nav-bar/nav-bar.component';
+import { PopularesComponent } from './pages/home/components/populares/populares.component';
+import { LowerPageComponent } from './pages/home/components/lower-page/lower-page.component';
+
 
 export const routes: Routes = [
     {path: "", redirectTo: "/login", pathMatch: 'full'},
@@ -20,6 +23,9 @@ export const routes: Routes = [
             {path: "carrinho", component: CarrinhoComponent},
             {path: "pedidos", component: PedidosComponent},
             {path: "conta", component: ContaComponent},
+            {path: "populares", component: PopularesComponent},
+            {path: "lower", component: LowerPageComponent},
+            
         ],
     },
   ]
