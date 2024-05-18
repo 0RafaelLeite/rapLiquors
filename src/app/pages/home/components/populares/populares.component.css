@@ -1,10 +1,17 @@
   .populares-container {
     text-align: center;
+
   }
   
   .populares-title {
+    display: flex;
     font-size: 24px;
     margin-top: 20px;
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48.41px;
+    text-align: left;
   }
   
   .carousel {
@@ -21,10 +28,16 @@
   .quantity-controls {
     display: flex;
     align-items: center;
+    border: 1px;
   }
   
   .quantity-controls button {
     font-size: 16px;
     margin: 0 5px;
+    border: 1px;
   }
   
+  .btn {
+    background-color: #A40221;    ;
+    color: #FFFFFFFF;
+  }
