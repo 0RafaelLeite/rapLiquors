@@ -1,3 +1,4 @@
+  /*
   .populares-container {
     text-align: center;
 
@@ -41,3 +42,83 @@
     background-color: #A40221;    ;
     color: #FFFFFFFF;
   }
+
+*/
+
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  width: 100%;
+  margin: 0 15px;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-info h5 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: #800000;
+  margin: 10px 0;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart input {
+  width: 50px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.add-to-cart button {
+  background-color: #800000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carousel-control-prev {
+  background-color: black;
+}
+.carousel-control-next {
+  background-color: black;
+}

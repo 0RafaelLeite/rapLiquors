@@ -1,12 +1,13 @@
-/* styles.css (ou seu arquivo de estilos) */
-.header {
-    background-color: #73031D;
+.top-nav-bar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: #73031D;
     padding: 20px;
-}
-
-.logo img {
+    color: #fff;
+  }
+  
+  .logo img {
     max-width: 100%;
     width: 136px;
     height: 124px;
@@ -14,58 +15,67 @@
     left: 36px;
     gap: 0px;
     opacity: 100px;
-}
-
-.top-page-label {
-    font-size: 18px;
-    margin-left: 20px;
-}
-
-.top-page-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-left: auto;
-}
-
-.icon-container {
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+  }
+  
+  .search-bar button {
+    padding: 5px;
+    border: none;
+    background-color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .search-bar button img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .delivery-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .delivery-info img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+  
+  .nav-icons {
     display: flex;
     align-items: center;
   }
   
-  .divider {
-    width: 1px;
-    height: 50px;
-    background-color: #ccc;
-    margin: 0 20px;
+  .nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
   }
-
-.search-box {
-    display: flex;
-    align-items: center;
-}
-
-#search-input {
-    width: 860px;
-    height: 55px;
-    top: 43px;
-    left: 185px;
-    gap: 0px;
-    border-radius: 5px;
-    opacity: 0px;
-    flex: 1;
-    margin-right: 10px;
-}
-
-#search-button {
-    display: flex;
-    align-items: center;
-    color: #B8B8B8;
-    width: 25px;
-    height: 27px;
-    top: 59px;
-    left: 991px;
-    gap: 0px;
-    opacity: 0px;
-
-}
+  
+  .nav-icon img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .nav-icon span {
+    font-size: 12px;
+  }
+  

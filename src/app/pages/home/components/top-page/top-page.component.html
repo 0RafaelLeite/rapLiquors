@@ -1,28 +1,32 @@
-<div class="header">
-    <div class="logo">
-        <a routerLink="/home">
-            <img src="/assets/utils/goldWitheLogo.svg" alt="" />
-        </a>
+<div class="top-nav-bar">
+  <div class="logo">
+    <a routerLink="/home"></a>
+    <img src="/assets/utils/goldWitheLogo.svg" alt="RAP Liquors">
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Marcas, produtos e mais...">
+    <button>
+      <img src="assets/images/search-icon.png" alt="Search">
+    </button>
+  </div>
+  <div class="nav-icons">
+    <div class="nav-icon">
+      <a routerLink="/home/conta">
+      <img src="/assets/icons/profile.svg" alt="Conta">
+      </a>
+      <span>Conta</span>
     </div>
-    <div class="search-box">
-        <input type="text" id="search-input" placeholder="Marcas, produtos e mais">
-        <button id="search-button"></button>
-      </div> 
-    <ul class="top-page-links">
-        <div class="icon-container">
-            <a routerLink="/home/conta">
-              <img src="/assets/icons/profile.svg" alt="" />
-            </a>
-          </div>
-          <div class="icon-container">
-            <a routerLink="/home/pedidos">
-              <img src="/assets/icons/orders.svg" alt="" />
-            </a>
-          </div>
-          <div class="icon-container">
-            <a routerLink="/home/carrinho">
-              <img src="/assets/icons/cart.svg " alt="" />
-            </a>
-          </div>              
-    </ul>
+    <div class="nav-icon">
+      <a routerLink="/home/pedidos">
+      <img src="/assets/icons/orders.svg" alt="Pedidos">
+      </a>
+      <span>Pedidos</span>
+    </div>
+    <div class="nav-icon">
+      <a routerLink="/home/carrinho">
+      <img src="/assets/icons/cart.svg" alt="Carinho">
+      </a>
+      <span>Carinho</span>
+    </div>
+  </div>
 </div>
