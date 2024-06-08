@@ -1,72 +1,30 @@
-<div id="productCarousel" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row justify-content-center">
-        <div class="col-md-3">
-          <div class="product-card">
-            <img src="/assets/img/JackHoney.svg" class="d-block w-100" alt="Jack Daniel's Honey">
-            <div class="product-info">
-              <h5>Licor Jack Daniel's Honey 1000ml</h5>
-              <p>R$ 128,70</p>
-              <div class="add-to-cart">
-                <input type="number" min="1" value="1" [(ngModel)]="quantities[0]">
-                <button (click)="addToCart('Licor Jack Daniel\'s Honey 1000ml', 128.70, quantities[0])">Adicionar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product-card">
-            <img src="/assets/img/JackHoney.svg" class="d-block w-100" alt="Jack Daniel's N°7">
-            <div class="product-info">
-              <h5>Jack Daniel's N°7 1000ml</h5>
-              <p>R$ 128,70</p>
-              <div class="add-to-cart">
-                <input type="number" min="1" value="1" [(ngModel)]="quantities[1]">
-                <button (click)="addToCart('Jack Daniel\'s N°7 1000ml', 128.70, quantities[1])">Adicionar</button>
-              </div>
-            </div>
+<section class="popular-items-container">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="/assets/img/JackHoney.svg" alt="Jack Daniel's Honey">
+        <div class="product-info">
+          <h5>Licor Jack Daniel's Honey 1000ml</h5>
+          <p>R$ 128,70</p>
+          <div class="add-to-cart">
+            <input type="number" min="1" value="1" [(ngModel)]="quantities[0]">
+            <button (click)="addToCart('Licor Jack Daniel\'s Honey 1000ml', 128.70, quantities[0])">Adicionar</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-md-3">
-          <div class="product-card">
-            <img src="/assets/img/JackHoney.svg" class="d-block w-100" alt="Jack Daniel's Apple">
-            <div class="product-info">
-              <h5>Licor Jack Daniel's Apple 1000ml</h5>
-              <p>R$ 128,70</p>
-              <div class="add-to-cart">
-                <input type="number" min="1" value="1" [(ngModel)]="quantities[2]">
-                <button (click)="addToCart('Licor Jack Daniel\'s Apple 1000ml', 128.70, quantities[2])">Adicionar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product-card">
-            <img src="/assets/img/JackHoney.svg" class="d-block w-100" alt="Jack Daniel's Fire">
-            <div class="product-info">
-              <h5>Licor Jack Daniel's Fire 1000ml</h5>
-              <p>R$ 128,70</p>
-              <div class="add-to-cart">
-                <input type="number" min="1" value="1" [(ngModel)]="quantities[3]">
-                <button (click)="addToCart('Licor Jack Daniel\'s Fire 1000ml', 128.70, quantities[3])">Adicionar</button>
-              </div>
-            </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="/assets/img/JackHoney.svg" alt="Jack Daniel's Apple">
+        <div class="product-info">
+          <h5>Licor Jack Daniel's Apple 1000ml</h5>
+          <p>R$ 128,70</p>
+          <div class="add-to-cart">
+            <input type="number" min="1" value="1" [(ngModel)]="quantities[1]">
+            <button (click)="addToCart('Licor Jack Daniel\'s Apple 1000ml', 128.70, quantities[1])">Adicionar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+</section>

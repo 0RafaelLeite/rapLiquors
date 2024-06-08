@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,8 +6,8 @@
     background-color: #7a0e21;
   }
   
-  .login-box {
-    background-color: #ffffff;
+  .signup-box {
+    background-color: #fff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -45,11 +45,11 @@
     cursor: not-allowed;
   }
   
-  .signup-link {
+  .login-link {
     margin-top: 1rem;
   }
   
-  .signup-link a {
+  .login-link a {
     color: #3a0e1b;
     text-decoration: none;
   }

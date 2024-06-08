@@ -1,53 +1,31 @@
-<section>
-  <div>
-    <div>
-      <div>
-        <div>
-          <div>
-
-            <div>
-
-              <h2>Login</h2>
-              <p>Please enter your login and password!</p>
-
-              <form [formGroup]="loginForm">
-
-                <div>
-
-                  <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
-                    <div class="text-danger">Email é obrigatório</div>
-                  </div>
-                  
-                  <div *ngIf="invalidUser">
-                    <div class="text-danger">E-mail / senha inválidos</div>
-                  </div>
-
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" formControlName="email"/>
-                  <label class="form-label" for="typeEmailX">Email</label>
-
-                </div>
-
-
-
-                <div>
-
-                  <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
-                    <div class="text-danger">Senha é um campo obrigatório</div>
-                  </div>
-
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg"  formControlName="password"/>
-                  <label class="form-label" for="typePasswordX">Password</label>
-                </div>
-
-                <button (click)="login()" [disabled]="!loginForm.valid">Login</button>
-                
-              </form>
-
-            </div>
-
-          </div>
+<section class="login-container">
+  <div class="login-box">
+    <div class="logo">
+      <img src="/assets/utils/goldWitheLogo.svg" alt="RAP Liquors">
+    </div>
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="input-group">
+        <label for="typeEmailX">E-mail</label>
+        <input type="email" id="typeEmailX" class="form-control" formControlName="email" placeholder="exemplo@email.com" />
+        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+          <div class="text-danger">Email é obrigatório</div>
         </div>
       </div>
+      <div class="input-group">
+        <label for="typePasswordX">Senha</label>
+        <input type="password" id="typePasswordX" class="form-control" formControlName="password" placeholder="********" />
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+          <div class="text-danger">Senha é um campo obrigatório</div>
+        </div>
+      </div>
+      <div *ngIf="invalidUser">
+        <div class="text-danger">E-mail / senha inválidos</div>
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Entrar</button>
+    </form>
+    <div class="signup-link">
+      <p>Ainda não tem uma conta? <a href="/signup">Cadastre-se</a></p>
     </div>
   </div>
 </section>

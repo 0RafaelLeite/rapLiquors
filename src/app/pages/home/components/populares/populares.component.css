@@ -1,124 +1,55 @@
-  /*
-  .populares-container {
-    text-align: center;
-
-  }
-  
-  .populares-title {
-    display: flex;
-    font-size: 24px;
-    margin-top: 20px;
-    font-family: Inter;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48.41px;
-    text-align: left;
-  }
-  
-  .carousel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .item {
-    margin: 10px;
-    text-align: center;
-  }
-
-  .quantity-controls {
-    display: flex;
-    align-items: center;
-    border: 1px;
-  }
-  
-  .quantity-controls button {
-    font-size: 16px;
-    margin: 0 5px;
-    border: 1px;
-  }
-  
-  .btn {
-    background-color: #A40221;    ;
-    color: #FFFFFFFF;
-  }
-
-*/
-
-.carousel-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carouselCont {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.popular-items-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #FFFFFFFF;
 }
 
 .product-card {
-  width: 100%;
-  margin: 0 15px;
-  text-align: center;
-  background-color: #fff;
-  padding: 10px;
+  background-color: white;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+  margin: 10px;
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
-}
-
-.product-info {
-  padding: 10px;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .product-info h5 {
-  font-size: 16px;
-  margin: 10px 0;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: black;
 }
 
 .product-info p {
-  font-size: 14px;
-  color: #800000;
-  margin: 10px 0;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .add-to-cart {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
 .add-to-cart input {
   width: 50px;
-  text-align: center;
   margin-right: 10px;
 }
 
 .add-to-cart button {
-  background-color: #800000;
-  color: #fff;
+  background-color: #A40221;    ;
+  color: #FFFFFFFF;
   border: none;
   padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-.carousel-control-prev {
-  background-color: black;
-}
-.carousel-control-next {
-  background-color: black;
+.add-to-cart button:hover {
+  background-color: #A40221;
 }

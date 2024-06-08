@@ -60,18 +60,19 @@
   .nav-icons {
     display: flex;
     align-items: center;
+    justify-content: space-around;
   }
   
   .nav-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 40px;
   }
   
   .nav-icon img {
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 48px;
     margin-bottom: 5px;
   }
   

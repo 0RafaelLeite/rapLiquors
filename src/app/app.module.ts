@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 import { CarrinhoComponent } from './pages/home/components/carrinho/carrinho.component';
 import { PedidosComponent } from './pages/home/components/pedidos/pedidos.component';
 import { ContaComponent } from './pages/home/components/conta/conta.component';
@@ -25,6 +26,7 @@ import { LowerPageComponent } from './pages/home/components/lower-page/lower-pag
       NavBarComponent,
       PopularesComponent,
       LowerPageComponent,
+      SignupComponent,
       
     ],
     imports: [
