@@ -1,1 +1,18 @@
-<p>pedidos works!</p>
+<section>
+    <div class="container">
+      <h3>Meus Pedidos</h3>
+      <div class="order" *ngFor="let order of orders">
+        <h4>{{ order.date }}</h4>
+        <div class="order-details">
+          <ul>
+            <li *ngFor="let item of order.items">{{ item }}</li>
+          </ul>
+          <div class="order-status">
+            <span>{{ order.status }}</span>
+            <button>Ver compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
