@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nome": "Licor Jack Daniel's Apple 1000ml",
+    "descricao": "Delicioso licor de maçã",
+    "preco": 128.70,
+    "tipo": "whisky",
+    "imagem": "/assets/img/JackHoney.svg"
+  },
+  {
+    "id": 2,
+    "nome": "Vodka Absolut 750ml",
+    "descricao": "Vodka premium",
+    "preco": 95.50,
+    "tipo": "vodka",
+    "imagem": "/assets/img/Absolut.svg"
+  }
+]

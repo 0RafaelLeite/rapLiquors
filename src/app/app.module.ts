@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BeveragesComponent } from './components/beverages/beverages.component';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { itensComponent } from './itens/itens.component';
+import { itemService } from './itens/itens.service';
+
 
 @NgModule({
     declarations: [
@@ -34,8 +37,9 @@ import { OrdersComponent } from './components/orders/orders.component';
       SignupComponent,
       BeveragesComponent,
       UsersComponent,
-      OrdersComponent
-      
+      OrdersComponent,
+      itensComponent
+
     ],
     imports: [
       BrowserModule,
@@ -45,8 +49,7 @@ import { OrdersComponent } from './components/orders/orders.component';
       ReactiveFormsModule,
       HttpClientModule
     ],
-    providers: [],
+    providers: [itemService],
     bootstrap: [AppComponent]
   })
   export class AppModule { }
-  
