@@ -80,3 +80,15 @@
     font-size: 12px;
   }
   
+.search-bar input{
+  height: 50px;
+}
+
+.search-bar button{
+  height: 50px;
+  padding-right: 25px;
+}
+
+.search-bar img{
+  transform: scale(1.4);
+}
