@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../services/api.service'; // Import the ApiService
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +11,7 @@ import { ApiService } from '../../services/api.service'; // Import the ApiServic
 export class SignupComponent {
   signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) { // Inject the ApiService and Router
+  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) {
     this.signupForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,11 +28,9 @@ export class SignupComponent {
     if (this.signupForm.valid) {
       this.apiService.register(this.signupForm.value).subscribe({
         next: (response) => {
-          // Handle successful signup
           this.router.navigate(['/login']);
         },
         error: (error) => {
-          // Handle signup error
           console.error('Signup failed', error);
         }
       });

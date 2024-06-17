@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router'
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { CarrinhoComponent } from './pages/home/components/carrinho/carrinho.component';
-import { PedidosComponent } from './pages/home/components/pedidos/pedidos.component';
-import { ContaComponent } from './pages/home/components/conta/conta.component';
-import { TopPageComponent } from './pages/home/components/top-page/top-page.component';
-import { NavBarComponent } from './pages/home/components/nav-bar/nav-bar.component';
-import { ItensComponent } from '../app/itens/itens.component';
-import { LowerPageComponent } from './pages/home/components/lower-page/lower-page.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
+import { PedidosComponent } from './pages/pedidos/pedidos.component';
+import { ContaComponent } from './pages/conta/conta.component';
+import { TopPageComponent } from './pages/top-page/top-page.component';
+import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
+import { ItensComponent } from './components/itens/itens.component';
+import { LowerPageComponent } from './pages/lower-page/lower-page.component';
 
 export const routes: Routes = [
     {path: "", redirectTo: "/login", pathMatch: 'full'},

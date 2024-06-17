@@ -1,38 +1,30 @@
 <div class="nav-bar">
-  <div class="nav-item">
-    <img src="/assets/icons/promo.svg" alt="Promoções">
-    <span>Promoções</span>
-  </div>
   <div class="divider"></div>
-  <div class="nav-item" id = "whisky">
+  <div class="nav-item" id="whisky" (click)="ItensComponent.filterItens('whisky')">
     <img src="/assets/icons/whisky.svg" alt="Whiskeys">
     <span>Whiskeys</span>
   </div>
   <div class="divider"></div>
-  <div class="nav-item" id = "cerveja">
+  <div class="nav-item" id="cerveja" (click)="ItensComponent.filterItens('cerveja')">
     <img src="/assets/icons/beer.svg" alt="Cervejas">
     <span>Cervejas</span>
   </div>
   <div class="divider"></div>
-  <div class="nav-item" id = "rum">
+  <div class="nav-item" id="rum" (click)="ItensComponent.filterItens('rum')" >
     <img src="/assets/icons/rum.svg" alt="Rum">
     <span>Rum</span>
   </div>
   <div class="divider"></div>
-  <div class="nav-item" id = "vinho">
+  <div class="nav-item" id="vinho" (click)="ItensComponent.filterItens('vinho')" >
     <img src="/assets/icons/wine.svg" alt="Vinhos">
     <span>Vinhos</span>
   </div>
   <div class="divider"></div>
-  <div class="nav-item"  id = "gin">
+  <div class="nav-item" id="gin" (click)="ItensComponent.filterItens('gin')">
     <img src="/assets/icons/gin.svg" alt="Gin">
     <span>Gin</span>
   </div>
   <div class="divider"></div>
-  <div class="nav-item">
-    <img src="/assets/icons/brands.svg" alt="Marcas">
-    <span>Marcas</span>
-  </div>
 </div>
 
-<app-itens></app-itens>
+<app-itens #ItensComponent></app-itens>
