@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { itemService } from './itens.service';
+import { itemService } from '../../services/itens.service';
 import { Item } from '../../models/itemModel';
-
+import { CartService } from '../../services/carrinho.service'
 @Component({
   selector: 'app-itens',
   templateUrl: './itens.component.html',
@@ -13,7 +13,7 @@ export class ItensComponent implements OnInit {
   filteredItens: Item[] = [];
   selectedTipo: string | null = null;
 
-  constructor(private itemService: itemService) { }
+  constructor(private itemService: itemService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.itemService.getItens().subscribe(data => {
@@ -34,8 +34,9 @@ export class ItensComponent implements OnInit {
   }
 
   addToCart(nome: string, preco: number, quantity: number): void {
-    //TODO: implementar carrinho
+    this.cartService.addItemToCart({ name: nome, price: preco, quantity });
   }
 }
+
 export { Item };
 

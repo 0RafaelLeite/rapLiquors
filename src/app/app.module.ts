@@ -18,8 +18,8 @@ import { BeveragesComponent } from './components/beverages/beverages.component';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ItensComponent } from './components/itens/itens.component';
-import { itemService } from './components/itens/itens.service';
-
+import { itemService } from './services/itens.service';
+import { CartService } from './services/carrinho.service';
 
 @NgModule({
     declarations: [
@@ -47,7 +47,7 @@ import { itemService } from './components/itens/itens.service';
       ReactiveFormsModule,
       HttpClientModule
     ],
-    providers: [itemService],
+    providers: [itemService, CartService],
     bootstrap: [AppComponent]
   })
   export class AppModule { }

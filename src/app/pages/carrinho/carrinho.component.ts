@@ -1,44 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartService, CartItem } from '../../services/carrinho.service';
 
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
-  styleUrl: './carrinho.component.css'
+  styleUrls: ['./carrinho.component.css']
 })
-export class CarrinhoComponent {
-  cartItems = [
-    { name: 'Produto 1', quantity: 2, price: 100.00 },
-    { name: 'Produto 2', quantity: 1, price: 200.00 },
-    { name: 'Produto 3', quantity: 3, price: 150.00 },
-  ];
-
+export class CarrinhoComponent implements OnInit {
+  cartItems: CartItem[] = [];
+  originalTotalPrice = 0;
   totalPrice = 0;
   discountAmount = 0;
   interestAmount = 0;
   paymentOption = 'avista';
   installments = 1;
   installmentOptions = Array.from({ length: 12 }, (_, i) => i + 1);
+  
+  constructor(private cartService: CartService) {}
 
-  constructor() {
-    this.calculateTotalPrice();
+  ngOnInit(): void {
+    this.cartService.cartItems$.subscribe(items => {
+      this.cartItems = items;
+      this.calculateTotalPrice();
+    });
   }
 
   calculateTotalPrice() {
-    this.totalPrice = this.cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
+    this.originalTotalPrice = this.cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
+    this.updateTotalPrice();
   }
 
   updateTotalPrice() {
-    this.calculateTotalPrice();
-
     if (this.paymentOption === 'avista') {
-      this.discountAmount = this.totalPrice * 0.05;
-      this.totalPrice -= this.discountAmount;
+      this.discountAmount = this.originalTotalPrice * 0.05;
+      this.totalPrice = this.originalTotalPrice - this.discountAmount;
+      this.interestAmount = 0; // Ensure interest is reset
     } else if (this.paymentOption === 'parcelado' && this.installments > 4) {
       const monthlyInterestRate = 0.015;
       const totalInterest = Math.pow(1 + monthlyInterestRate, this.installments) - 1;
-      this.interestAmount = this.totalPrice * totalInterest;
-      this.totalPrice += this.interestAmount;
+      this.interestAmount = this.originalTotalPrice * totalInterest;
+      this.totalPrice = this.originalTotalPrice + this.interestAmount;
+      this.discountAmount = 0; // Ensure discount is reset
     } else {
+      this.totalPrice = this.originalTotalPrice;
       this.discountAmount = 0;
       this.interestAmount = 0;
     }

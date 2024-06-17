@@ -1,38 +1,37 @@
 <section>
-    <div class="container">
-      <h3>Meu Carrinho</h3>
-      <div *ngFor="let item of cartItems" class="cart-item">
-        <div class="item-details">
-          <span>{{ item.name }}</span>
-          <span>{{ item.quantity }} x R$ {{ item.price.toFixed(2) }}</span>
-        </div>
+  <div class="container">
+    <h3>Meu Carrinho</h3>
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <div class="item-details">
+        <span>{{ item.name }}</span>
+        <span>{{ item.quantity }} x R$ {{ item.price.toFixed(2) }}</span>
       </div>
-      <div class="cart-summary">
-        <h4>
-          Total: R$ {{ totalPrice.toFixed(2) }}
-          <span *ngIf="paymentOption === 'parcelado' && installments > 4">(+R$ {{ interestAmount.toFixed(2) }} de juros)</span>
-          <span *ngIf="paymentOption === 'avista'">(-R$ {{ discountAmount.toFixed(2) }} de desconto)</span>
-        </h4>
-        <div class="payment-options">
-          <label>
-            <input type="radio" name="payment" value="avista" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" /> À Vista (5% de desconto)
-          </label>
-          <label>
-            <input type="radio" name="payment" value="parcelado" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" /> Parcelado
-          </label>
-          <div *ngIf="paymentOption === 'parcelado'">
-            <label for="installments">Parcelas:</label>
-            <select id="installments" [(ngModel)]="installments" (change)="updateTotalPrice()">
-              <option *ngFor="let i of installmentOptions" [value]="i">{{ i }}x</option>
-            </select>
-            <div>
-              <span *ngIf="installments <= 4">Sem Juros</span>
-              <span *ngIf="installments > 4">Com Juros (1.5% ao mês)</span>
-            </div>
+    </div>
+    <div class="cart-summary">
+      <h4>
+        Total: R$ {{ totalPrice.toFixed(2) }}
+        <span *ngIf="paymentOption === 'parcelado' && installments > 4">(+R$ {{ interestAmount.toFixed(2) }} de juros)</span>
+        <span *ngIf="paymentOption === 'avista'">(-R$ {{ discountAmount.toFixed(2) }} de desconto)</span>
+      </h4>
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="payment" value="avista" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" /> À Vista (5% de desconto)
+        </label>
+        <label>
+          <input type="radio" name="payment" value="parcelado" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" /> Parcelado
+        </label>
+        <div *ngIf="paymentOption === 'parcelado'">
+          <label for="installments">Parcelas:</label>
+          <select id="installments" [(ngModel)]="installments" (change)="updateTotalPrice()">
+            <option *ngFor="let i of installmentOptions" [value]="i">{{ i }}x</option>
+          </select>
+          <div>
+            <span *ngIf="installments <= 4">Sem Juros</span>
+            <span *ngIf="installments > 4">Com Juros (1.5% ao mês)</span>
           </div>
         </div>
       </div>
-      <button (click)="finalizePurchase()">Finalizar Compra</button>
     </div>
-  </section>
-  
+    <button (click)="finalizePurchase()">Finalizar Compra</button>
+  </div>
+</section>
