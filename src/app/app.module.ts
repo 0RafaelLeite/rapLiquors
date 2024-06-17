@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BeveragesComponent } from './components/beverages/beverages.component';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import { itensComponent } from './itens/itens.component';
+import { ItensComponent } from './itens/itens.component';
 import { itemService } from './itens/itens.service';
 
 
@@ -38,7 +38,7 @@ import { itemService } from './itens/itens.service';
       BeveragesComponent,
       UsersComponent,
       OrdersComponent,
-      itensComponent
+      ItensComponent
 
     ],
     imports: [

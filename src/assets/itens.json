@@ -1,18 +1,86 @@
 [
   {
     "id": 1,
-    "nome": "Licor Jack Daniel's Apple 1000ml",
-    "descricao": "Delicioso licor de maçã",
+    "nome": "Licor Jack Daniel's Honey 1000ml",
     "preco": 128.70,
     "tipo": "whisky",
     "imagem": "/assets/img/JackHoney.svg"
   },
   {
     "id": 2,
-    "nome": "Vodka Absolut 750ml",
-    "descricao": "Vodka premium",
-    "preco": 95.50,
+    "nome": "abusado tropical 500ml",
+    "preco": 3.50,
     "tipo": "vodka",
-    "imagem": "/assets/img/Absolut.svg"
+    "imagem": "/assets/img/abusado.png"
+  },
+  {
+    "id": 3,
+    "nome": "cerveja schin 350ml",
+    "preco": 2.30,
+    "tipo": "cerveja",
+    "imagem": "/assets/img/schin.png"
+  },
+  {
+    "id": 4,
+    "nome": "cerveja glacial 350ml",
+    "preco": 1.89,
+    "tipo": "cerveja",
+    "imagem": "/assets/img/glacial.png"
+  },
+  {
+    "id": 5,
+    "nome": "Black Jocker 980ml",
+    "preco": 7.90,
+    "tipo": "whisky",
+    "imagem": "/assets/img/jocker.png"
+  },
+  {
+    "id": 6,
+    "nome": "Rum Kraken 980ml",
+    "preco": 150.0,
+    "tipo": "whisky",
+    "imagem": "/assets/img/rum.png"
+  },
+  {
+    "id": 7,
+    "nome": "Vinho San Severo 980ml",
+    "preco": 45.0,
+    "tipo": "vinho",
+    "imagem": "/assets/img/severo.jpg"
+  },
+  {
+    "id": 8,
+    "nome": "Vinho Quinta do Morgado 900ml",
+    "preco": 45.0,
+    "tipo": "vinho",
+    "imagem": "/assets/img/morgado.jpg"
+  },
+  {
+    "id": 9,
+    "nome": "Gin Bombay 900ml",
+    "preco": 45.0,
+    "tipo": "gin",
+    "imagem": "/assets/img/bombay.png"
+  },
+  {
+    "id": 10,
+    "nome": "Cerveja proibida 350ml",
+    "preco": 5.0,
+    "tipo": "cerveja",
+    "imagem": "/assets/img/proibida.png"
+  },
+  {
+    "id": 11,
+    "nome": "Gin Tanqueray 900ml",
+    "preco": 145.0,
+    "tipo": "gin",
+    "imagem": "/assets/img/tanqueray.png"
+  },
+  {
+    "id": 12,
+    "nome": "Vodka Balalaika 1000ml",
+    "preco": 145.0,
+    "tipo": "vodka",
+    "imagem": "/assets/img/balalaika.png"
   }
 ]

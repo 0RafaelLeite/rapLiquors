@@ -8,7 +8,7 @@ import { Item } from '../models/itemModel';
   templateUrl: './itens.component.html',
   styleUrls: ['./itens.component.css']
 })
-export class itensComponent implements OnInit {
+export class ItensComponent implements OnInit {
   itens: Item[] = [];
   quantities: number[] = [];
 
