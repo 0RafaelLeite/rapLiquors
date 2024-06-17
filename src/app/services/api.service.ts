@@ -10,7 +10,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  // Auth Endpoints
   register(data: { name: string; email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/register`, data);
   }
@@ -23,7 +22,6 @@ export class ApiService {
     return this.http.put(`${this.apiUrl}/auth/address`, address);
   }
 
-  // Beverage Endpoints
   createBeverage(beverage: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/beverages`, beverage);
   }
@@ -40,7 +38,6 @@ export class ApiService {
     return this.http.put(`${this.apiUrl}/beverages/stock/${id}`, { quantity });
   }
 
-  // Order Endpoints
   createOrder(order: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/orders`, order);
   }

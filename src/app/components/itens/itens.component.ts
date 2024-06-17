@@ -1,7 +1,6 @@
-// src/app/itens/itens.component.ts
 import { Component, OnInit } from '@angular/core';
-import { itemService } from '../itens/itens.service';
-import { Item } from '../models/itemModel';
+import { itemService } from './itens.service';
+import { Item } from '../../models/itemModel';
 
 @Component({
   selector: 'app-itens',
@@ -35,8 +34,7 @@ export class ItensComponent implements OnInit {
   }
 
   addToCart(nome: string, preco: number, quantity: number): void {
-    // Lógica para adicionar ao carrinho
-    //console.log(Added ${quantity} x ${nome} at R$ ${preco});
+    //TODO: implementar carrinho
   }
 }
 export { Item };

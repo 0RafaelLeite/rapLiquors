@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service'; // Import the ApiService
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -23,12 +23,10 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.apiService.login(this.loginForm.value).subscribe({
         next: (response) => {
-          // Handle successful login
           localStorage.setItem('token', response.token);
           this.router.navigate(['/home']);
         },
         error: (error) => {
-          // Handle login error
           this.invalidUser = true;
         }
       });
