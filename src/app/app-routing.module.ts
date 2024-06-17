@@ -12,7 +12,7 @@ import { ItensComponent } from './components/itens/itens.component';
 import { LowerPageComponent } from './pages/lower-page/lower-page.component';
 
 export const routes: Routes = [
-    {path: "", redirectTo: "/login", pathMatch: 'full'},
+    {path: "", redirectTo: "/home", pathMatch: 'full'},
     {path: "login", component: LoginComponent},
     {path: "signup", component: SignupComponent},
     {
@@ -26,7 +26,7 @@ export const routes: Routes = [
             {path: "conta", component: ContaComponent},
             {path: "populares", component: ItensComponent},
             {path: "lower", component: LowerPageComponent},
-            
+
         ],
     },
   ]
@@ -35,5 +35,5 @@ export const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
-  
+
   export class AppRoutingModule { }
