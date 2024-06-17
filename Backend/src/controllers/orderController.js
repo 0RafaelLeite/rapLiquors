@@ -1,5 +1,4 @@
 const Order = require('../models/Order');
-const Beverage = require('../models/Beverage');
 
 exports.createOrder = async (req, res) => {
   const { items, totalPrice, paymentOption, installments } = req.body;

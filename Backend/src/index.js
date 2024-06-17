@@ -3,7 +3,6 @@ const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
-const beverageRoutes = require('./routes/beverageRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const itemRoutes = require('./routes/itemRoutes'); // Importar o novo roteador
 
@@ -20,7 +19,6 @@ connectDB();
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
-app.use('/api/beverages', beverageRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/items', itemRoutes); // Utilizar o novo roteador
 
