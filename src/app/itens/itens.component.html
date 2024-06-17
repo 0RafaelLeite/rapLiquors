@@ -1,0 +1,15 @@
+<div class="row">
+  <div *ngFor="let item of itens; let i = index" class="col-md-3" [ngClass]="item.tipo">
+    <div class="product-card">
+      <img [src]="item.imagem" [alt]="item.nome">
+      <div class="product-info">
+        <h5>{{ item.nome }}</h5>
+        <p>R$ {{ item.preco | number: '1.2-2' }}</p>
+        <div class="add-to-cart">
+          <input type="number" min="1" [value]="quantities[i]" [(ngModel)]="quantities[i]">
+          <button (click)="addToCart(item.nome, item.preco, quantities[i])">Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

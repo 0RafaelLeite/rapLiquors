@@ -6,10 +6,10 @@
     <h2>Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="input-group">
-        <label for="typeEmailX">E-mail</label>
-        <input type="email" id="typeEmailX" class="form-control" formControlName="email" placeholder="exemplo@email.com" />
+        <label for="typeEmail">E-mail</label>
+        <input type="email" id="typeEmail" class="form-control" formControlName="email" placeholder="Digite seu e-mail" required />
         <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
-          <div class="text-danger">Email é obrigatório</div>
+          <div class="text-danger">E-mail é obrigatório</div>
         </div>
       </div>
       <div class="input-group">
@@ -20,12 +20,12 @@
         </div>
       </div>
       <div *ngIf="invalidUser">
-        <div class="text-danger">E-mail / senha inválidos</div>
+        <div class="text-danger">Nome de usuário, e-mail ou senha inválidos</div>
       </div>
       <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Entrar</button>
     </form>
     <div class="signup-link">
-      <p>Ainda não tem uma conta? <a href="/signup">Cadastre-se</a></p>
+      <p>Ainda não tem uma conta? <a routerLink="/signup">Cadastre-se</a></p>
     </div>
   </div>
 </section>

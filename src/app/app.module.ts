@@ -14,6 +14,14 @@ import { TopPageComponent } from './pages/home/components/top-page/top-page.comp
 import { NavBarComponent } from './pages/home/components/nav-bar/nav-bar.component';
 import { PopularesComponent } from './pages/home/components/populares/populares.component';
 import { LowerPageComponent } from './pages/home/components/lower-page/lower-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BeveragesComponent } from './components/beverages/beverages.component';
+import { UsersComponent } from './components/users/users.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { ItensComponent } from './itens/itens.component';
+import { itemService } from './itens/itens.service';
+
+
 @NgModule({
     declarations: [
       AppComponent,
@@ -27,17 +35,21 @@ import { LowerPageComponent } from './pages/home/components/lower-page/lower-pag
       PopularesComponent,
       LowerPageComponent,
       SignupComponent,
-      
+      BeveragesComponent,
+      UsersComponent,
+      OrdersComponent,
+      ItensComponent
+
     ],
     imports: [
       BrowserModule,
       RouterModule,
       AppRoutingModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      HttpClientModule
     ],
-    providers: [],
+    providers: [itemService],
     bootstrap: [AppComponent]
   })
   export class AppModule { }
-  
