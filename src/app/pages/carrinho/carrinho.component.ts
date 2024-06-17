@@ -34,13 +34,13 @@ export class CarrinhoComponent implements OnInit {
     if (this.paymentOption === 'avista') {
       this.discountAmount = this.originalTotalPrice * 0.05;
       this.totalPrice = this.originalTotalPrice - this.discountAmount;
-      this.interestAmount = 0; // Ensure interest is reset
+      this.interestAmount = 0; 
     } else if (this.paymentOption === 'parcelado' && this.installments > 4) {
       const monthlyInterestRate = 0.015;
       const totalInterest = Math.pow(1 + monthlyInterestRate, this.installments) - 1;
       this.interestAmount = this.originalTotalPrice * totalInterest;
       this.totalPrice = this.originalTotalPrice + this.interestAmount;
-      this.discountAmount = 0; // Ensure discount is reset
+      this.discountAmount = 0; 
     } else {
       this.totalPrice = this.originalTotalPrice;
       this.discountAmount = 0;

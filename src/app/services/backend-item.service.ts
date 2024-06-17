@@ -7,7 +7,7 @@ import { Item } from '../models/itemModel';
   providedIn: 'root'
 })
 export class BackendItemService {
-  private apiUrl = 'http://localhost:5000/api/items/save-items'; // Altere para a URL do seu backend
+  private apiUrl = 'http://localhost:5000/api/items/save-items';
 
   constructor(private http: HttpClient) { }
 

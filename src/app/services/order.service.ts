@@ -8,14 +8,14 @@ import { Order } from '../models/orderModel';
   providedIn: 'root'
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:5000/api/orders'; // URL do seu backend API
+  private apiUrl = 'http://localhost:5000/api/orders';
 
   constructor(private http: HttpClient) {}
 
   createOrder(order: Order): Observable<Order> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('accessToken')}` // Exemplo de uso de token JWT
+      'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
     });
 
     return this.http.post<Order>(this.apiUrl, order, { headers }).pipe(
