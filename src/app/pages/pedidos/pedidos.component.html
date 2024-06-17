@@ -1,18 +1,20 @@
 <section>
-    <div class="container">
-      <h3>Meus Pedidos</h3>
-      <div class="order" *ngFor="let order of orders">
-        <h4>{{ order.date }}</h4>
-        <div class="order-details">
-          <ul>
-            <li *ngFor="let item of order.items">{{ item }}</li>
-          </ul>
-          <div class="order-status">
-            <span>{{ order.status }}</span>
-            <button>Ver compra</button>
-          </div>
+  <div class="container">
+    <h3>Meus Pedidos</h3>
+    <div class="order" *ngFor="let order of orders">
+      <h4>{{ order.date | date: 'medium' }}</h4>
+      <div class="order-details">
+        <ul>
+          <li *ngFor="let item of order.items">{{ item.name }} x{{ item.quantity }} - R$ {{ item.price.toFixed(2) }}</li>
+        </ul>
+        <div class="order-summary">
+          <p>Total: R$ {{ order.totalPrice.toFixed(2) }}</p>
+          <p>Pagamento: {{ order.paymentOption }} {{ order.installments > 1 ? ('em ' + order.installments + 'x') : '' }}</p>
+        </div>
+        <div class="order-status">
+          <button>Ver compra</button>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

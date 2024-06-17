@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../services/order.service';
+import { Order } from '../../models/orderModel';
 
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
-  styleUrl: './pedidos.component.css'
+  styleUrls: ['./pedidos.component.css']
 })
-export class PedidosComponent {
-  orders = [
-    {
-      date: '8 de Junho',
-      items: ['item x2', 'item x3', 'item x5', 'item'],
-      status: 'A caminho'
-    },
-    {
-      date: '3 de Maio',
-      items: ['item x2', 'item x3', 'item x5', 'item'],
-      status: 'Entregue'
-    }
-  ];
+export class PedidosComponent implements OnInit {
+  orders: Order[] = [];
+
+  constructor(private orderService: OrderService) {}
+
+  ngOnInit(): void {
+    this.orderService.getOrders().subscribe((orders: Order[]) => {
+      this.orders = orders;
+    });
+  }
 }

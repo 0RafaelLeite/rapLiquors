@@ -11,6 +11,8 @@ const orderSchema = new mongoose.Schema({
     }
   ],
   totalPrice: { type: Number, required: true },
+  paymentOption: { type: String, required: true },
+  installments: { type: Number, default: 1 },
   date: { type: Date, default: Date.now },
 });
 

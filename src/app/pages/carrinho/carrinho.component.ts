@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService, CartItem } from '../../services/carrinho.service';
-
+import { OrderService } from '../../services/order.service';
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
@@ -16,7 +16,7 @@ export class CarrinhoComponent implements OnInit {
   installments = 1;
   installmentOptions = Array.from({ length: 12 }, (_, i) => i + 1);
   
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private orderService: OrderService) {}
 
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe(items => {
@@ -49,11 +49,20 @@ export class CarrinhoComponent implements OnInit {
   }
 
   finalizePurchase() {
-    let finalPrice = this.totalPrice;
-    if (this.paymentOption === 'avista') {
-      alert(`Compra finalizada! Valor final: R$ ${finalPrice.toFixed(2)} com desconto.`);
-    } else {
-      alert(`Compra finalizada! Valor final: R$ ${finalPrice.toFixed(2)} em ${this.installments}x.`);
-    }
+    const order = {
+      items: this.cartItems,
+      totalPrice: this.totalPrice,
+      paymentOption: this.paymentOption,
+      installments: this.installments
+    };
+    this.orderService.createOrder(order).subscribe({
+      next: () => {
+        alert(`Compra finalizada! Valor final: R$ ${this.totalPrice.toFixed(2)}.`);
+        this.cartService.clearCart();
+      },
+      error: () => {
+        alert('Erro ao finalizar a compra. Tente novamente.');
+      }
+    });
   }
 }

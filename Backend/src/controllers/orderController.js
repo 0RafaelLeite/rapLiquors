@@ -2,20 +2,14 @@ const Order = require('../models/Order');
 const Beverage = require('../models/Beverage');
 
 exports.createOrder = async (req, res) => {
-  const { items } = req.body;
+  const { items, totalPrice, paymentOption, installments } = req.body;
   try {
-    let totalPrice = 0;
-    for (const item of items) {
-      const beverage = await Beverage.findById(item.beverageId);
-      if (!beverage) {
-        return res.status(404).json({ msg: `Beverage with ID ${item.beverageId} not found` });
-      }
-      totalPrice += beverage.price * item.quantity;
-    }
     const newOrder = new Order({
       userId: req.user.id,
       items,
       totalPrice,
+      paymentOption,
+      installments,
     });
     await newOrder.save();
     res.status(201).json(newOrder);

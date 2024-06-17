@@ -14,13 +14,12 @@ import { TopPageComponent } from './pages/top-page/top-page.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { LowerPageComponent } from './pages/lower-page/lower-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BeveragesComponent } from './components/beverages/beverages.component';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ItensComponent } from './components/itens/itens.component';
 import { itemService } from './services/itens.service';
 import { CartService } from './services/carrinho.service';
-
+import { OrderService } from './services/order.service';
 @NgModule({
     declarations: [
       AppComponent,
@@ -33,7 +32,6 @@ import { CartService } from './services/carrinho.service';
       NavBarComponent,
       LowerPageComponent,
       SignupComponent,
-      BeveragesComponent,
       UsersComponent,
       OrdersComponent,
       ItensComponent
@@ -47,7 +45,7 @@ import { CartService } from './services/carrinho.service';
       ReactiveFormsModule,
       HttpClientModule
     ],
-    providers: [itemService, CartService],
+    providers: [itemService, CartService, OrderService],
     bootstrap: [AppComponent]
   })
   export class AppModule { }
