@@ -45,4 +45,10 @@ export class ApiService {
   getOrders(): Observable<any> {
     return this.http.get(`${this.apiUrl}/orders`);
   }
+
+  isLoggedIn(): boolean {
+    // Aqui você deve implementar a lógica para verificar se o usuário está logado
+    // Isso pode envolver verificar um token JWT no localStorage, por exemplo
+    return !!localStorage.getItem('authToken'); // Exemplo simples usando localStorage
+  }
 }
