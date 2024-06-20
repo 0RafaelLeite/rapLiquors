@@ -14,12 +14,10 @@ import { TopPageComponent } from './pages/top-page/top-page.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { LowerPageComponent } from './pages/lower-page/lower-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BeveragesComponent } from './components/beverages/beverages.component';
+import { ItensComponent } from './components/item/item.component';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import { ItensComponent } from './components/itens/itens.component';
-import { itemService } from './components/itens/itens.service';
-
+import { ItemService } from './components/item/item.service';
 
 @NgModule({
     declarations: [
@@ -33,11 +31,9 @@ import { itemService } from './components/itens/itens.service';
       NavBarComponent,
       LowerPageComponent,
       SignupComponent,
-      BeveragesComponent,
+      ItensComponent,
       UsersComponent,
-      OrdersComponent,
-      ItensComponent
-
+      OrdersComponent
     ],
     imports: [
       BrowserModule,
@@ -47,7 +43,7 @@ import { itemService } from './components/itens/itens.service';
       ReactiveFormsModule,
       HttpClientModule
     ],
-    providers: [itemService],
+    providers: [ItemService],
     bootstrap: [AppComponent]
   })
   export class AppModule { }

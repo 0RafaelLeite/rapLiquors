@@ -8,7 +8,7 @@ import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { ContaComponent } from './pages/conta/conta.component';
 import { TopPageComponent } from './pages/top-page/top-page.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
-import { ItensComponent } from './components/itens/itens.component';
+import { ItensComponent } from './components/item/item.component';
 import { LowerPageComponent } from './pages/lower-page/lower-page.component';
 
 export const routes: Routes = [

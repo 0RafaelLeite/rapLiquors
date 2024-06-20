@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { itemService } from './itens.service';
-import { Item } from '../../models/itemModel';
+import { ItemService } from './item.service';
+import { Item } from './item.model';
 
 @Component({
   selector: 'app-itens',
-  templateUrl: './itens.component.html',
-  styleUrls: ['./itens.component.css']
+  templateUrl: './item.component.html',
+  styleUrls: ['./item.component.css']
 })
 export class ItensComponent implements OnInit {
   itens: Item[] = [];
@@ -13,13 +13,12 @@ export class ItensComponent implements OnInit {
   filteredItens: Item[] = [];
   selectedTipo: string | null = null;
 
-  constructor(private itemService: itemService) { }
+  constructor(private ItemService: ItemService) { }
 
   ngOnInit(): void {
-    this.itemService.getItens().subscribe(data => {
-      this.itens = data;
-      this.filteredItens = data;
-      this.quantities = new Array(this.itens.length).fill(1);
+    this.ItemService.getItems().subscribe(items => {
+      this.itens = items;
+      this.quantities = Array(items.length).fill(1);
     });
   }
 
