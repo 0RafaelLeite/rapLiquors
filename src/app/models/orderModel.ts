@@ -1,8 +1,16 @@
+export interface OrderItem {
+  beverageId: string;
+  name: string;
+  quantity: number;
+  price: number;
+}
+
 export interface Order {
-    date?: string;
-    items: { name: string, quantity: number, price: number }[];
-    totalPrice: number;
-    paymentOption: string;
-    installments: number;
-  }
-  
+  _id: string;
+  userId: string;
+  items: OrderItem[];
+  totalPrice: number;
+  paymentOption: string;
+  installments: number;
+  createdAt: Date;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { itemService } from '../../services/itens.service';
 import { Item } from '../../models/itemModel';
-import { CartService } from '../../services/carrinho.service'
+import { CartService, CartItem } from '../../services/carrinho.service'
 @Component({
   selector: 'app-itens',
   templateUrl: './itens.component.html',
@@ -33,8 +33,9 @@ export class ItensComponent implements OnInit {
     }
   }
 
-  addToCart(nome: string, preco: number, quantity: number): void {
-    this.cartService.addItemToCart({ name: nome, price: preco, quantity });
+  addToCart(id: number, name: string, price: number, quantity: number): void {
+    const cartItem: CartItem = { id, name, price, quantity };
+    this.cartService.addItem(cartItem);
   }
 }
 

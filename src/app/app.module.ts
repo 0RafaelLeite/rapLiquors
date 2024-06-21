@@ -13,13 +13,17 @@ import { ContaComponent } from './pages/conta/conta.component';
 import { TopPageComponent } from './pages/top-page/top-page.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { LowerPageComponent } from './pages/lower-page/lower-page.component';
-import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ItensComponent } from './components/itens/itens.component';
 import { itemService } from './services/itens.service';
 import { CartService } from './services/carrinho.service';
 import { OrderService } from './services/order.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth.interceptor';
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './services/auth.service';
+
 @NgModule({
     declarations: [
       AppComponent,
@@ -45,7 +49,14 @@ import { OrderService } from './services/order.service';
       ReactiveFormsModule,
       HttpClientModule
     ],
-    providers: [itemService, CartService, OrderService],
+    providers: [
+      itemService, 
+      CartService, 
+      OrderService,
+      AuthService,
+      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+      AuthGuard,
+    ],
     bootstrap: [AppComponent]
   })
   export class AppModule { }

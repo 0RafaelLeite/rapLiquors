@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 import { Order } from '../models/orderModel';
 
 @Injectable({
@@ -10,30 +10,14 @@ import { Order } from '../models/orderModel';
 export class OrderService {
   private apiUrl = 'http://localhost:5000/api/orders';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
-  createOrder(order: Order): Observable<Order> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    });
-
-    return this.http.post<Order>(this.apiUrl, order, { headers }).pipe(
-      catchError((error) => {
-        throw 'Erro ao criar pedido: ' + error;
-      })
-    );
+  createOrder(order: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, order);
   }
 
   getOrders(): Observable<Order[]> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    });
-
-    return this.http.get<Order[]>(this.apiUrl, { headers }).pipe(
-      catchError((error) => {
-        throw 'Erro ao obter pedidos: ' + error;
-      })
-    );
+    const userId = this.authService.getUserId();
+    return this.http.get<Order[]>(`${this.apiUrl}`);
   }
 }

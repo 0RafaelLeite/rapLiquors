@@ -4,23 +4,25 @@
       <img src="/assets/utils/goldWitheLogo.svg" alt="RAP Liquors">
     </div>
     <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="input-group">
         <label for="typeEmail">E-mail</label>
         <input type="email" id="typeEmail" class="form-control" formControlName="email" placeholder="Digite seu e-mail" required />
         <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
-          <div class="text-danger">E-mail é obrigatório</div>
+          <div class="text-danger" *ngIf="loginForm.get('email')?.errors?.['required']">E-mail é obrigatório</div>
+          <div class="text-danger" *ngIf="loginForm.get('email')?.errors?.['email']">E-mail inválido</div>
         </div>
       </div>
       <div class="input-group">
         <label for="typePasswordX">Senha</label>
         <input type="password" id="typePasswordX" class="form-control" formControlName="password" placeholder="********" />
         <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
-          <div class="text-danger">Senha é um campo obrigatório</div>
+          <div class="text-danger" *ngIf="loginForm.get('password')?.errors?.['required']">Senha é um campo obrigatório</div>
+          <div class="text-danger" *ngIf="loginForm.get('password')?.errors?.['minlength']">Senha deve ter pelo menos 6 caracteres</div>
         </div>
       </div>
-      <div *ngIf="invalidUser">
-        <div class="text-danger">Nome de usuário, e-mail ou senha inválidos</div>
+      <div *ngIf="errorMessage" class="text-danger">
+        {{ errorMessage }}
       </div>
       <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Entrar</button>
     </form>

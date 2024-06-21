@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService, CartItem } from '../../services/carrinho.service';
 import { OrderService } from '../../services/order.service';
+import { AuthService } from '../../services/auth.service';
+
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
@@ -15,10 +17,21 @@ export class CarrinhoComponent implements OnInit {
   paymentOption = 'avista';
   installments = 1;
   installmentOptions = Array.from({ length: 12 }, (_, i) => i + 1);
+  userId: string | null = null;
   
-  constructor(private cartService: CartService, private orderService: OrderService) {}
+  constructor(
+    private cartService: CartService,
+    private orderService: OrderService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
+    this.authService.isLoggedIn().subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+        this.userId = this.authService.getUserId();  // Obter o ID do usuário logado
+      }
+    });
+    
     this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
       this.calculateTotalPrice();
@@ -50,7 +63,11 @@ export class CarrinhoComponent implements OnInit {
 
   finalizePurchase() {
     const order = {
-      items: this.cartItems,
+      items: this.cartItems.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+      })),
       totalPrice: this.totalPrice,
       paymentOption: this.paymentOption,
       installments: this.installments

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,23 +22,7 @@ export class ApiService {
   addAddress(address: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/auth/address`, address);
   }
-
-  createBeverage(beverage: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/beverages`, beverage);
-  }
-
-  updateBeverage(id: string, beverage: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/beverages/${id}`, beverage);
-  }
-
-  deleteBeverage(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/beverages/${id}`);
-  }
-
-  updateStock(id: string, quantity: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/beverages/stock/${id}`, { quantity });
-  }
-
+  
   createOrder(order: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/orders`, order);
   }

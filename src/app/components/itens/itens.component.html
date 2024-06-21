@@ -7,7 +7,7 @@
         <p style="font-weight: bold; font-size: larger;">R$ {{ item.preco | number: '1.2-2' }}</p>
         <div class="add-to-cart">
           <input type="number" min="1" [value]="quantities[i]" [(ngModel)]="quantities[i]">
-          <button (click)="addToCart(item.nome, item.preco, quantities[i])">Adicionar</button>
+          <button (click)="addToCart(item.id, item.nome, item.preco, quantities[i])">Adicionar ao Carrinho</button>
         </div>
       </div>
     </div>

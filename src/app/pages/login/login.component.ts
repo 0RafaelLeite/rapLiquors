@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,26 +10,29 @@ import { ApiService } from '../../services/api.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  invalidUser: boolean = false;
+  errorMessage: string | null = null;
 
-  constructor(private router: Router, private apiService: ApiService) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
+  constructor(private fb: FormBuilder, private authService: AuthService) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  login() {
+  onSubmit(): void {
     if (this.loginForm.valid) {
-      this.apiService.login(this.loginForm.value).subscribe({
-        next: (response) => {
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['/home']);
+      this.authService.login(this.loginForm.value).subscribe({
+        next: () => {
+          console.log('Login bem-sucedido');
+          this.errorMessage = null;
         },
         error: (error) => {
-          this.invalidUser = true;
+          console.error('Erro durante o login:', error);
+          this.errorMessage = 'Credenciais inválidas. Tente novamente.';
         }
       });
+    } else {
+      this.errorMessage = 'Preencha todos os campos corretamente.';
     }
   }
 }

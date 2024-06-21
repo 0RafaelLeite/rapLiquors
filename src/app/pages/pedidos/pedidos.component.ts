@@ -9,12 +9,22 @@ import { Order } from '../../models/orderModel';
 })
 export class PedidosComponent implements OnInit {
   orders: Order[] = [];
+  userId: string | null = null;
 
   constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe((orders: Order[]) => {
-      this.orders = orders;
+    this.loadOrders();
+  }
+
+  loadOrders(): void {
+    this.orderService.getOrders().subscribe({
+      next: (orders) => {
+        this.orders = orders;
+      },
+      error: (error) => {
+        console.error('Erro ao carregar pedidos:', error);
+      }
     });
   }
 }
