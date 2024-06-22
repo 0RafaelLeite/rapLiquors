@@ -11,7 +11,7 @@ import { Item } from './models/itemModel';
 export class AppComponent implements OnInit {
   title = 'rapLiquors';
 
-  constructor(private itemService: itemService, private backendItemService: BackendItemService) {}
+  constructor(private itemService: itemService, private backendItemService: BackendItemService) { }
 
   ngOnInit() {
     this.itemService.getItens().subscribe((data: Item[]) => {

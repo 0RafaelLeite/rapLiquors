@@ -10,8 +10,8 @@ describe('LowerPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [LowerPageComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(LowerPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

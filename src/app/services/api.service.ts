@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 export class ApiService {
   private apiUrl = 'http://localhost:5000/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   register(data: { name: string; email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/register`, data);
@@ -22,7 +22,7 @@ export class ApiService {
   addAddress(address: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/auth/address`, address);
   }
-  
+
   createOrder(order: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/orders`, order);
   }

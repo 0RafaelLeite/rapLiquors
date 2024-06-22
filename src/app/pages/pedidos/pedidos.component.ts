@@ -11,7 +11,7 @@ export class PedidosComponent implements OnInit {
   orders: Order[] = [];
   userId: string | null = null;
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.loadOrders();

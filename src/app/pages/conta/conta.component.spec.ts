@@ -10,8 +10,8 @@ describe('ContaComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ContaComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ContaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

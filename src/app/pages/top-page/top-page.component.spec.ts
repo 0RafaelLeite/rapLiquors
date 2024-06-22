@@ -10,8 +10,8 @@ describe('TopPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TopPageComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(TopPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

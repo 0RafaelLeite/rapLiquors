@@ -10,7 +10,7 @@ import { Order } from '../models/orderModel';
 export class OrderService {
   private apiUrl = 'http://localhost:5000/api/orders';
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   createOrder(order: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, order);

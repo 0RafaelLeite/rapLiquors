@@ -18,12 +18,12 @@ export class CarrinhoComponent implements OnInit {
   installments = 1;
   installmentOptions = Array.from({ length: 12 }, (_, i) => i + 1);
   userId: string | null = null;
-  
+
   constructor(
     private cartService: CartService,
     private orderService: OrderService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.authService.isLoggedIn().subscribe(isLoggedIn => {
@@ -31,7 +31,7 @@ export class CarrinhoComponent implements OnInit {
         this.userId = this.authService.getUserId();  // Obter o ID do usuário logado
       }
     });
-    
+
     this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
       this.calculateTotalPrice();
@@ -47,13 +47,13 @@ export class CarrinhoComponent implements OnInit {
     if (this.paymentOption === 'avista') {
       this.discountAmount = this.originalTotalPrice * 0.05;
       this.totalPrice = this.originalTotalPrice - this.discountAmount;
-      this.interestAmount = 0; 
+      this.interestAmount = 0;
     } else if (this.paymentOption === 'parcelado' && this.installments > 4) {
       const monthlyInterestRate = 0.015;
       const totalInterest = Math.pow(1 + monthlyInterestRate, this.installments) - 1;
       this.interestAmount = this.originalTotalPrice * totalInterest;
       this.totalPrice = this.originalTotalPrice + this.interestAmount;
-      this.discountAmount = 0; 
+      this.discountAmount = 0;
     } else {
       this.totalPrice = this.originalTotalPrice;
       this.discountAmount = 0;

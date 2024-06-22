@@ -10,15 +10,18 @@
     <div class="cart-summary">
       <h4>
         Total: R$ {{ totalPrice.toFixed(2) }}
-        <span *ngIf="paymentOption === 'parcelado' && installments > 4">(+R$ {{ interestAmount.toFixed(2) }} de juros)</span>
+        <span *ngIf="paymentOption === 'parcelado' && installments > 4">(+R$ {{ interestAmount.toFixed(2) }} de
+          juros)</span>
         <span *ngIf="paymentOption === 'avista'">(-R$ {{ discountAmount.toFixed(2) }} de desconto)</span>
       </h4>
       <div class="payment-options">
         <label>
-          <input type="radio" name="payment" value="avista" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" /> À Vista (5% de desconto)
+          <input type="radio" name="payment" value="avista" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" />
+          À Vista (5% de desconto)
         </label>
         <label>
-          <input type="radio" name="payment" value="parcelado" [(ngModel)]="paymentOption" (change)="updateTotalPrice()" /> Parcelado
+          <input type="radio" name="payment" value="parcelado" [(ngModel)]="paymentOption"
+            (change)="updateTotalPrice()" /> Parcelado
         </label>
         <div *ngIf="paymentOption === 'parcelado'">
           <label for="installments">Parcelas:</label>

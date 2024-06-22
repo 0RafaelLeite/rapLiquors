@@ -25,38 +25,38 @@ import { AuthGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
 
 @NgModule({
-    declarations: [
-      AppComponent,
-      HomeComponent,
-      LoginComponent,
-      CarrinhoComponent,
-      PedidosComponent,
-      ContaComponent,
-      TopPageComponent,
-      NavBarComponent,
-      LowerPageComponent,
-      SignupComponent,
-      UsersComponent,
-      OrdersComponent,
-      ItensComponent
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    CarrinhoComponent,
+    PedidosComponent,
+    ContaComponent,
+    TopPageComponent,
+    NavBarComponent,
+    LowerPageComponent,
+    SignupComponent,
+    UsersComponent,
+    OrdersComponent,
+    ItensComponent
 
-    ],
-    imports: [
-      BrowserModule,
-      RouterModule,
-      AppRoutingModule,
-      FormsModule,
-      ReactiveFormsModule,
-      HttpClientModule
-    ],
-    providers: [
-      itemService, 
-      CartService, 
-      OrderService,
-      AuthService,
-      { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-      AuthGuard,
-    ],
-    bootstrap: [AppComponent]
-  })
-  export class AppModule { }
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    itemService,
+    CartService,
+    OrderService,
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    AuthGuard,
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

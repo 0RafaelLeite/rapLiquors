@@ -10,8 +10,8 @@ describe('CarrinhoComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CarrinhoComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CarrinhoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
