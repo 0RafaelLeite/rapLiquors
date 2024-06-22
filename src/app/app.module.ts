@@ -9,7 +9,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
-import { ContaComponent } from './pages/conta/conta.component';
 import { TopPageComponent } from './pages/top-page/top-page.component';
 import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
 import { LowerPageComponent } from './pages/lower-page/lower-page.component';
@@ -31,7 +30,6 @@ import { AuthService } from './services/auth.service';
     LoginComponent,
     CarrinhoComponent,
     PedidosComponent,
-    ContaComponent,
     TopPageComponent,
     NavBarComponent,
     LowerPageComponent,
